@@ -1,0 +1,16 @@
+# Ignore dataset folders
+data/
+datasets/
+*.pcap
+*.csv
+*.tsv
+*.h5
+*.parquet
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore temporary files
+__pycache__/
+*.pyc
+
