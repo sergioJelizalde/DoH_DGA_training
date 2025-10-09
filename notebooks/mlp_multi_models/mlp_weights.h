@@ -7,7 +7,20 @@
 
 #define NUM_LAYERS 3
 
+#define NUM_CLASSES 4
+
 static const int LAYER_SIZES[NUM_LAYERS+1] = { 16, 64, 32, 4 };
+
+#define OUTPUT_SIZE 4
+
+// Convenience macros for selecting code paths at compile time
+#if OUTPUT_SIZE == 1
+    #define IS_BINARY_CLASSIFICATION 1
+    #define IS_MULTICLASS_CLASSIFICATION 0
+#else
+    #define IS_BINARY_CLASSIFICATION 0
+    #define IS_MULTICLASS_CLASSIFICATION 1
+#endif
 
 // Shape: (16, 64)
 static const float W0[1024] ALIGN16 = {
